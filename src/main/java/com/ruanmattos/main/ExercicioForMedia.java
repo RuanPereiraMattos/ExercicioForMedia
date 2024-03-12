@@ -1,5 +1,7 @@
 package com.ruanmattos.main;
 
+import java.util.Scanner;
+
 /**
  * Leia 1 valor inteiro N, que representa o número de casos de teste que vem a seguir. Cada caso de teste consiste de 3 valores reais, cada um deles uma casa decimal.
  *
@@ -25,5 +27,19 @@ public class ExercicioForMedia {
 
     public static void main(String[] args) {
 
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Digite a quantidade de números que deseja verificar a média: ");
+
+        int qtd = s.nextInt();
+        double media = 0;
+
+        for (int i = 0; i < qtd; i++) {
+            System.out.print("Digite o número " + (i + 2) + " que deseja adicionar à média: ");
+            media += s.nextDouble();
+        }
+
+        System.out.printf("A média dos %d números que você solicitou é: %.1f", qtd, (media / qtd));
+        
     }
 }
